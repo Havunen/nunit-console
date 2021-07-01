@@ -28,6 +28,7 @@ namespace NUnit.Engine.Runners
             }
         }
 
+        [Obsolete]
         public override object InitializeLifetimeService()
         {
             return null;

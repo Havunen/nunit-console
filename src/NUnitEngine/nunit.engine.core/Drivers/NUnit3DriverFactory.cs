@@ -47,7 +47,7 @@ namespace NUnit.Engine.Drivers
             Guard.ArgumentValid(IsSupportedTestFramework(reference), "Invalid framework", "reference");
 #if NETSTANDARD
             return new NUnitNetStandardDriver();
-#elif NETCOREAPP3_1
+#elif NETCOREAPP3_1 || NET5_0_OR_GREATER
             return new NUnitNetCore31Driver();
 #endif
         }

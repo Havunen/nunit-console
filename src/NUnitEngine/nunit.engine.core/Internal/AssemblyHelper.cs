@@ -30,7 +30,7 @@ namespace NUnit.Engine.Internal
         /// <returns>The path.</returns>
         public static string GetAssemblyPath(Assembly assembly)
         {
-            string codeBase = assembly.CodeBase;
+            string codeBase = assembly.Location;
 
             if (IsFileUri(codeBase))
                 return GetAssemblyPathFromCodeBase(codeBase);

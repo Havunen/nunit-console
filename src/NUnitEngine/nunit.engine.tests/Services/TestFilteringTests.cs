@@ -16,7 +16,7 @@ namespace NUnit.Engine.Services.Tests
 
 #if NETCOREAPP2_1
         private NUnitNetStandardDriver _driver;
-#elif NETCOREAPP3_1
+#elif NETCOREAPP3_1 || NET5_0_OR_GREATER
         private NUnitNetCore31Driver _driver;
 #else
         private NUnit3FrameworkDriver _driver;
@@ -28,7 +28,7 @@ namespace NUnit.Engine.Services.Tests
             var mockAssemblyPath = System.IO.Path.Combine(TestContext.CurrentContext.TestDirectory, MOCK_ASSEMBLY);
 #if NETCOREAPP2_1
             _driver = new NUnitNetStandardDriver();
-#elif NETCOREAPP3_1
+#elif NETCOREAPP3_1 || NET5_0_OR_GREATER
             _driver = new NUnitNetCore31Driver();
 #else
             var assemblyName = typeof(NUnit.Framework.TestAttribute).Assembly.GetName();

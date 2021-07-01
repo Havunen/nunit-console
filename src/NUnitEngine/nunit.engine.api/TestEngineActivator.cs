@@ -60,7 +60,7 @@ namespace NUnit.Engine
                 {
                     throw new NUnitEngineNotFoundException(minVersion);
                 }
-                return (ITestEngine)AppDomain.CurrentDomain.CreateInstanceFromAndUnwrap(engine.CodeBase, DefaultTypeName);
+                return (ITestEngine)AppDomain.CurrentDomain.CreateInstanceFromAndUnwrap(engine.Location, DefaultTypeName);
             }
             catch (NUnitEngineNotFoundException)
             {

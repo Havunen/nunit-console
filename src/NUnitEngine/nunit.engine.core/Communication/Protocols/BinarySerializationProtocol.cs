@@ -98,7 +98,9 @@ namespace NUnit.Engine.Communication.Protocols
         {
             using (var memoryStream = new MemoryStream())
             {
+#pragma warning disable SYSLIB0011 // Type or member is obsolete
                 new BinaryFormatter().Serialize(memoryStream, message);
+#pragma warning restore SYSLIB0011 // Type or member is obsolete
                 return memoryStream.ToArray();
             }
         }
@@ -114,7 +116,9 @@ namespace NUnit.Engine.Communication.Protocols
             {
                 try
                 {
+#pragma warning disable SYSLIB0011 // Type or member is obsolete
                     return new BinaryFormatter().Deserialize(memoryStream);
+#pragma warning restore SYSLIB0011 // Type or member is obsolete
                 }
                 catch (Exception exception)
                 {
